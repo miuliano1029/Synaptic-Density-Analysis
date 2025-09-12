@@ -94,7 +94,7 @@ This macro allows for standardization of ROI lengths within a chosen range. Anyt
   - Average Puncta contains results for each image, including puncta density
   - Individual puncta will have a line item for each puncta, including size, signal intensity, etc. This is supplemental to the average results
   - Puncta Analysis contains genera data about the experiment/macro run
-  - **Common errors:** Sometimes with assigning the thresholding and length values from the .csv files there is an error.
+  - Common errors: Sometimes with assigning the thresholding and length values from the .csv files there is an error.
     - For length, the results of the calculation for puncta per 10um are infinity, and all lengths are 0. In that case, this can be calculate manually (tranfer over the correct lengths and calculte) and the macro does not need to be re-run
     - For thresholding, this is a bigger issue, where the issue is typically due to mismatched file names/indexes for identification. You'll see it upon runnig the macaro as the thresholding is set and segmentation of particles. Checking filenames compared to values within "Label2Array" or the .csv "File" column is the first thing to see. Additionally, if there is a common string (ROIs from the same image) you may accidentally apply the same threshold across the multiple ROIs (can be checked in the average puncta results document by looking at the thresholding value for each line item). Sometimes closing Fiji and starting again can fix if there doesn't seem to be any real reason for the issue.
 
