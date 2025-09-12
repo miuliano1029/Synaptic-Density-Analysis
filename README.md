@@ -3,32 +3,32 @@ For quantifying puncta density of a synaptic marker
 
 This analysis is used to quantify the puncta density of a target of interest within an image. For synaptic densities, a chosen synaptic marker (VGLUT1, Bassoon, Homer) is quantified along a dendritic segment. This is for analysis of a single channel, not colocalization of two or more.
 
-1. Arrange channels + stack to .tif from .ims
-   This macro allows for initial processing of raw image files.
-   - Starting image folder selection (no nesting, metadata files are allowed)
-   - Output folder selection
-   - Initial prompt allows to:
-   - Identify the number of channels within the image
-       - How many channels you would like in the final image
-       - The file extension type (to isolate/limit file list to that type)
-       - If a projection is needed (blank does not perform a projection)
+**1. Arrange channels + stack to .tif from .ims**
+This macro allows for initial processing of raw image files.
+  - Starting image folder selection (no nesting, metadata files are allowed)
+  - Output folder selection
+  - Initial prompt allows to:
+     - Identify the number of channels within the image
+      - How many channels you would like in the final image
+      - The file extension type (to isolate/limit file list to that type)
+      - If a projection is needed (blank does not perform a projection)
    - Next prompt allows for:
        - Identification of signal in each channel (additional channels can be customized within the macro)
        - Reorganization of channels (if starting vs ending channels differs, it will by default list in chronological order)
    - Files will then open individually and process. NOTE: depending on the stack selection, a suffix will be added to the new images (MAX, MIN, AVG)
    - Excel file listing starting/ending channel information will also be saved in output
 
-2. ROI Selection
-   This macro will open images and pompt for selection of an ROI (dendritic segment)
-   - Starting image folder
-   - Output folder for ROIs
-   - Experiment Info Prompt
-      - Experiment Title: To name/identify saved files
-      - Pixel scale: to assign the correct scale
+**2. ROI Selection** 
+This macro will open images and pompt for selection of an ROI (dendritic segment)
+  - Starting image folder
+  - Output folder for ROIs
+  - Experiment Info Prompt
+     - Experiment Title: To name/identify saved files
+     - Pixel scale: to assign the correct scale
   - Channel Info Prompt
-      - ROI Type: polygon is default, though freehand is particularly useful with a tablet or drawing pad
-      - Number of channels within the starting images
-      - Number of channels for final image (this is for a merged image. All channels will be extracted and saved as single channel files!)
+     - ROI Type: polygon is default, though freehand is particularly useful with a tablet or drawing pad
+     - Number of channels within the starting images
+     - Number of channels for final image (this is for a merged image. All channels will be extracted and saved as single channel files!)
   - Assigning Channel Colors: this allows for organization/identification of the single channel images saved
     - Channel color: this reorders the starting channels for your merged file as RGBC (2 channel file will select and order the channels labeled Red and Green, respectively) Make sure to select the appropriate color for each channel (though this can also be done manually after, using the single channel images)
   - Visualize in composite view: this allows you to set/limit which channels you are able to see when selecting an ROI
@@ -41,7 +41,7 @@ This analysis is used to quantify the puncta density of a target of interest wit
   - Excel file with channel info
   - Folders containing single channel and merged image files of the ROIs
 
-3. ROI Length MinMax
+**3. ROI Length MinMax** 
 This macro allows for standardization of ROI lengths within a chosen range. Anything under the minimum will be excluded, while those over will be prompted to make a smaller selection
 -Starting images: choose a folder with images that you plan to quantify (this can be multichannel, though easier workflow by using the single channel images you plan to perform analysis)
 - Output: folder for finalized pool of images for analysis, excel with length values
@@ -56,7 +56,7 @@ This macro allows for standardization of ROI lengths within a chosen range. Anyt
   - Lengths larger than the maximum allowed value will get an exception asking for a new length within the ROI. Once selected, if within the range a new image will be exctracted based on the new ROI length bounds. New image and length will be saved and recorded
 - Output will include pool of ROI images within the set range, and an excel file with the measured lengths of each (scale values)
     
-4. Thresholding Single Channel
+**4. Thresholding Single Channel** 
    This macro allows to record/set thresholding values in single channel images. 
    NOTE: for puncta analysis, only individual thresholding values are needed (no ROIs or masks needed).As this is for quantifying number of represetative puncta, individual thresholding is applicable. for signal intensity-based analysis and quantification, set thresholding is needed.
    - Starting image folder selection (images only, no nested folders)
@@ -74,7 +74,7 @@ This macro allows for standardization of ROI lengths within a chosen range. Anyt
        - Excel file containing randomized list of images
        - Excel file with individual thresholding values
           
-6. Single Channel Puncta Analysis
+**5. Single Channel Puncta Analysis** 
    This macro then takes selected single channel ROI images and performs maxima detection and particle analysis using the recorded thresholding value. NOTE: This is to quantify puncta, not examine signal intensity
    - Starting images: Single channel images of the target of interest to quantify
    - Output: Folder for results
