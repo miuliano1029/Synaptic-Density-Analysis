@@ -65,7 +65,7 @@ run("Properties...", "slices=1 frames=1 unit=micron pixel_width="+scale+" pixel_
 		saveAs("Tiff", output+File.separator+title);
 		adj=" ";
 	}
-	if (length>40){
+	if (length>max){
 		while (length < min || length > max) {
 		roiManager("reset");
 		run("Clear Results");
