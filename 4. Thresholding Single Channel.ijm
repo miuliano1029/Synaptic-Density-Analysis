@@ -71,7 +71,7 @@ for (i = 0; i < list.length; i++) {
     Table.set("File", i, list[i]); // Add each array value to the "Value" column
 }
 selectWindow("Results");
-saveAs("Text", ROIdir +experiment+" Randomized File List.csv");
+saveAs("Text", output +experiment+" Randomized File List.csv");
 
 for (i = 0; i < list.length; i++) {
 	if(File.isDirectory(input + File.separator + list[i]))
